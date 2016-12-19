@@ -1,36 +1,73 @@
+/*Main content*/
+
 body {
   font-family: 'Open sans', sans-serif;
 }
 
-h1 {
-  font size:2em;
+h1, p {
+  color:white;
 }
+
+h1 {
+  padding-left: 5%;
+  padding-bottom: 4%;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: .85em;
+}
+
+/*Layout*/
 
 .parent-flex {
   display: flex;
-  height: 100vh;
-  width: 100%;
-  flex-wrap: wrap-reverse;
+  padding: 20px;
+  background-color: lightgray;
 }
 
 .flex-grid {
   display:flex;
-  flex-wrap: wrap-reverse;
   flex:.6;
-  border: 1px dashed;
+  flex-wrap: wrap-reverse;
 }
 
 .flex-grid-profile {
   flex: .4;
-  float:right;
-  border: 1px dashed;
+  height: 100vh;
+  background-image: url("../images/trump-portrait.jpg");
+  background-size: cover;
 }
 
+/*Grid boxes*/
+
 .box {
-  display:flex;
-  border: 1px solid;
   flex: auto;
   width: 25%;
+  padding-top: 10%;
+  border: 1px solid;
+  text-align: center;
+}
+
+.quotes {
+  padding: 10px 0px 0px 25px;
+}
+
+.buttons {
+  padding:20px 0px 0px 25px;
+  background: transparent;
+  border:black;
+  box-shadow:none;
+  font-size: 1em;
+  color:white;
+}
+
+.links {
+  height:20px;
+}
+
+.icon {
+  width: 30%;
 }
 
 .box1 {
@@ -49,7 +86,6 @@ h1 {
   background-color: #6cc4b9;
 }
 
-
 .box5 {
   background-color: #ed4c57;
 }
@@ -59,11 +95,50 @@ h1 {
 }
 
 .box7 {
-flex-grow: 5;
-background-color: #94bb41;
-color:white;
+  flex-grow: 5;
+  padding-top: 7%;
+  background-color: #94bb41;
+  text-align: left;
 }
 
 .box8 {
   background-color: #f6aa3d;
 }
+
+
+/*Mobile responsive*/
+
+@media screen and (max-width: 750px){
+
+  body {
+   height:100vh;
+   width:100%;
+ }
+
+  .parent-flex {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .flex-grid-profile {
+    display:none
+  }
+
+  .flex-grid {
+    display:flex;
+    flex:1;
+    flex-wrap: wrap-reverse;
+  }
+
+  .box {
+    flex: auto;
+    width: 45%;
+    justify-content: auto;
+    padding-bottom: 5%;
+    align-items: center;
+  }
+
+  .quotes {
+    text-indent: -9999px;;
+  }
