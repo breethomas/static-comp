@@ -70,38 +70,38 @@ p {
   width: 30%;
 }
 
-.box1 {
+.social {
   background-color: #9681b6;
 }
 
-.box2 {
+.contact {
   background-color: #6cc4b9;
 }
 
-.box3 {
+.portfolio {
   background-color: #9681b6;
 }
 
-.box4 {
+.experience {
   background-color: #6cc4b9;
 }
 
-.box5 {
+.education {
   background-color: #ed4c57;
 }
 
-.box6 {
+.blog {
   background-color: #94bb41;
 }
 
-.box7 {
+.main {
   flex-grow: 5;
   padding-top: 7%;
   background-color: #94bb41;
   text-align: left;
 }
 
-.box8 {
+.profile {
   background-color: #f6aa3d;
 }
 
