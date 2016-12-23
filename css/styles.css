@@ -1,91 +1,105 @@
-/*Main content*/
+/*Base*/
 html,
 body {
-  height:100%;
+  height: 100%;
 }
 
 body {
   font-family: 'Open sans', sans-serif;
-}
-
-h1, p {
-  color:white;
+  color: white;
+  text-transform: uppercase;
 }
 
 h1 {
-  padding-left: 5%;
-  padding-bottom: 4%;
   font-size: 1.5em;
+  line-height: 2;
 }
 
 p {
   font-size: .85em;
+  line-height: 1.5;
 }
 
 /*Layout*/
-
 .parent-flex {
   display: flex;
-  padding: 20px;
-  background-color: lightgray;
+  height: 100%;
+}
+
+.flex-grid,
+.flex-grid-profile {
+  flex: 1 1 50%;
 }
 
 .flex-grid {
-  display:flex;
-  flex:.6;
-  flex-wrap: wrap-reverse;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-grid-profile {
-  flex: .4;
-  height: 100vh;
-  background-image: url("../images/trump-portrait.jpg");
+  background: url(../images/trump-portrait.jpg) no-repeat;
   background-size: cover;
 }
 
-/*Grid boxes*/
+/*Components*/
+.box.header-box {
+  flex-basis: 59.5%
+}
+
+.box.header-box {
+  align-items: flex-start;
+  padding: 0 30px;
+}
 
 .box {
-  flex: auto;
-  width: 25%;
-  padding-top: 10%;
-  border: 1px solid;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 33.3333%;
 }
 
-.quotes {
-  padding: 10px 0px 0px 25px;
+.btn-container {
+  margin-top: 20px;
 }
 
-.buttons {
-  padding:20px 0px 0px 25px;
+.btn-resume {
+  background: url(../images/resume.png) no-repeat 5px 50%;
+  background-size: 20px;
+}
+
+.btn-donate {
+  background: url(../images/donate.png) no-repeat 5px 50%;
+  background-size: 20px;
+}
+
+button {
+  min-width: 100px;
+  min-height: 40px;
   background: transparent;
-  border:black;
-  box-shadow:none;
-  font-size: 1em;
-  color:white;
+  border: 1px solid;
+  color: white;
+  text-transform: uppercase;
 }
 
-.links {
-  height:20px;
+button:first-child {
+  margin-right: 10px;
 }
 
 .icon {
-  width: 30%;
+  max-width: 100px;
 }
 
-.social {
-  background-color: #9681b6;
+.avatar {
+  display: none;
 }
 
-.contact {
-  background-color: #6cc4b9;
-}
-
+.social,
 .portfolio {
   background-color: #9681b6;
 }
 
+.contact,
 .experience {
   background-color: #6cc4b9;
 }
@@ -94,55 +108,29 @@ p {
   background-color: #ed4c57;
 }
 
-.blog {
-  background-color: #94bb41;
-}
-
-.main {
-  flex-grow: 5;
-  padding-top: 7%;
-  background-color: #94bb41;
-  text-align: left;
-}
-
 .profile {
   background-color: #f6aa3d;
 }
 
+.header-box,
+.footer-box {
+  background-color: #94bb41;
+}
 
-/*Mobile responsive*/
 
-@media screen and (max-width: 750px){
-
-  body {
-   height:100vh;
-   width:100%;
- }
-
-  .parent-flex {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    flex-direction: column-reverse;
-  }
-
+@media screen and (max-width: 1140px) {
   .flex-grid-profile {
-    display:none
+    background-position-x: 60%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .flex-grid-profile {
+    display: none;
+  }
+  .avatar {
+    display: inline-block;
+    max-width: 100px;
   }
 
-  .flex-grid {
-    display:flex;
-    flex:1;
-    flex-wrap: wrap-reverse;
-  }
-
-  .box {
-    flex: auto;
-    width: 45%;
-    justify-content: auto;
-    padding-bottom: 5%;
-    align-items: center;
-  }
-
-  .quotes {
-    text-indent: -9999px;;
-  }
+}
